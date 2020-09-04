@@ -1,0 +1,250 @@
+:root {
+  --blue-dark: hsl(217, 19%, 35%);
+  --blue: hsl(214, 17%, 51%);
+  --blue-light: hsl(212, 23%, 69%);
+  --light: hsl(210, 46%, 95%);
+  --white: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: var(--light);
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+}
+
+.resume-article {
+  border-radius: 5px;
+  max-width: 375px;
+  margin: 25px;
+  height: auto;
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+}
+
+.resume-article__image {
+  overflow: hidden;
+  max-width: 100%;
+  max-height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px 5px 0 0;
+}
+
+.resume-artitle__content {
+  flex: 1;
+  padding: 25px 20px;
+}
+
+.resume-artitle__content h2 {
+  margin-top: 20px;
+  font-size: 18px;
+  color: var(--blue-dark);
+}
+
+.resume-artitle__content p {
+  margin-top: 14px;
+  line-height: 18px;
+  color: var(--blue-light);
+}
+
+.content__footer {
+  position: relative;
+  flex: 1;
+  margin-top: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__user {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.footer__user img {
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+  border-radius: 50%;
+}
+
+.user__about p {
+  margin: 0;
+  color: var(--blue-dark);
+  font-weight: bold;
+}
+
+.user__about time {
+  font-size: 13px;
+  color: var(--blue-light);
+}
+
+.share__button {
+  position: relative;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  background: var(--white);
+  z-index: 10;
+}
+
+.share__controlers {
+  position: absolute;
+  display: none;
+  opacity: 0;
+  justify-content: flex-start;
+  align-items: center;
+  height: 85px;
+  width: calc(100% + 40px);
+  background: var(--blue-dark);
+  color: var(--blue);
+  border-radius: 0  0 10px 10px;
+  transition: opacity 0.2s;
+  z-index: 1;
+}
+
+.share__controlers.active {
+  display: flex;
+  opacity: 1;
+  bottom: -25px;
+  left: -20px;
+  padding: 20px 30px;
+}
+
+.share__button:hover, .share__button svg path {
+  background: var(--blue);
+  transition: all 0.2s ease-in-out;
+}
+
+.share__controlers.active ~ .share__button {
+  background: var(--blue);
+}
+
+.share__controlers.active ~ .share__button svg path, .share__button:hover svg path {
+  fill: var(--white);
+}
+
+.share__controlers span {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-right: 10px;
+}
+
+.share__controlers ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.share__controlers li {
+  margin: 0 5px;
+  z-index: 1;
+}
+
+@media screen and (min-width: 720px){
+  .resume-article {
+    max-width: 750px;
+    height: 250px;
+    flex-direction: row;
+  }
+  
+  .resume-article__image {
+    overflow: hidden;
+    width: 40%;
+    height: 100%;
+    border-radius: 5px 0 0 5px;
+  }
+  
+  .resume-article__image img {
+    transition: all 0.3s ease-in-out;
+    height: 100%;
+  }
+  
+  .resume-article:hover .resume-article__image img{
+    transform: scale(1.1);
+  }
+  
+  .resume-artitle__content h2 {
+    margin: 0;
+    font-size: 20px;
+  }
+  
+  .resume-artitle__content p {
+    margin-top: 15px;
+  }
+
+  .content__footer {
+    position: relative;
+    flex: 1;
+    margin-top: 15px;
+  }
+
+  .share {
+    position: relative;
+  }
+
+  .share__controlers {
+    position: relative;
+    justify-content: center;
+    position: absolute;
+    height: 45px;
+    width: 200px;
+    border-radius: 10px;
+  }
+  
+  .share__controlers.active {
+    display: flex;
+    opacity: 1;
+    top: -70px;
+    left: -90px;
+  }
+  
+  .share__controlers span {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-right: 10px;
+  }
+  
+  .share__controlers::before {
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: var(--blue-dark);
+    transform: rotate(45deg) translateX(-50%);
+    bottom: -15px;
+    left: 50%;
+  }
+  
+  .share__controlers ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+  }
+  
+  .share__controlers li {
+    margin: 0 5px;
+    z-index: 1;
+  }
+}
