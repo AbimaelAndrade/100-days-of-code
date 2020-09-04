@@ -103,7 +103,7 @@ body {
   justify-content: center;
   align-items: center;
   border: 0;
-  background: var(--white);
+  background: var(--light);
   z-index: 10;
 }
 
